@@ -35,9 +35,7 @@ if (isset($_POST['submit'])) {
             $post_image = $row['post_image'];
             $post_content = $row['post_content'];
             ?>
-
-
-                <!-- First Blog Post -->
+               <!-- First Blog Post -->
                 <h2>
                     <a href="#"><?php echo $post_title; ?></a>
                 </h2>
@@ -50,7 +48,6 @@ if (isset($_POST['submit'])) {
                 <hr>
                 <p><?php echo $post_content; ?></p>
                 <a class="btn btn-primary" href="#">Read More <span class="glyphicon glyphicon-chevron-right"></span></a>
-
                 <hr>
                 <?php
 }

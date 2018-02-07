@@ -40,41 +40,14 @@ if (isset($_POST['submit'])) {
                                 <input type="submit" class="btn btn-primary" name="submit" value="Add Category">
                             </div>
                         </form>
-                        <!-- EDIT -->
-                        <form action="" method="post">
-                            <div class="form-group">
-                                <label for="cat-title">Edit Category</label>
-
-                                <?php
+                        <?php
+//If edit link got click then it will go to update_categories.php
 if (isset($_GET['edit'])) {
-    $cat_id = $_GET['edit'];
-    $query = "SELECT * FROM categories WHERE cat_id = {$cat_id} ";
-    $select_categories_id = mysqli_query($connection, $query);
-    while ($row = mysqli_fetch_assoc($select_categories_id)) {
-        $cat_id = $row['cat_id'];
-        $cat_title = $row['cat_title'];
-        ?>
-                                    <input type="text" class="form-control" name="cat_title" value="<?php if(isset($cat_title))echo $cat_title ?>">
-                           
-
-
-                            <?php
-
-    }
-
+    include "includes/update_categories.php";
 }
 
 ?>
- </div>
-                            <div class="form-group">
-                                <input type="submit" class="btn btn-primary" name="submit" value="Update Category">
-                            </div>
-
-
-
-
-                        </form>
-                    </div>
+                     </div>
                     <!-- Add Category Form -->
                     <div class="col-xs-6">
 
@@ -100,6 +73,7 @@ while ($row = mysqli_fetch_assoc($select_categories)) {
     echo "<td><a href='categories.php?edit={$cat_id}'>EDIT</a></td>";
     echo "</tr>";
 }
+
 ?>
                                 <?php //DELETE QUERY
 if (isset($_GET['delete'])) {

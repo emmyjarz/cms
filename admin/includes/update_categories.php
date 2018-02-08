@@ -12,7 +12,7 @@ if (isset($_GET['edit'])) {
         $cat_id = $row['cat_id'];
         $cat_title = $row['cat_title'];
         ?>
-                                    <input type="text" class="form-control" name="cat_title" value="<?php if (isset($cat_title)) {echo $cat_title;}?>">
+                                    <input type="text" class="form-control" name="cat_title" value="<?php if (isset($cat_title)) {echo $cat_title;}?>" required>
                                     <?php
     }
 }
@@ -23,7 +23,11 @@ if (isset($_POST['update_category'])) {
     if (!$update_query) {
         die("FAIL" . mysqli_error($connection));
     }
+    //refresh page
+//After update will not see form for updating again
+    header("Location: categories.php");
 }
+
 ?>
                             </div>
                             <div class="form-group">

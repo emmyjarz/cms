@@ -10,6 +10,7 @@
                                <th>Tags</th>
                                <th>Comment</th>
                                <th>Date</th>
+                               <th>Edit</th>
                                <th>Delete</th>
                            </tr>
                        </thead>
@@ -37,7 +38,8 @@ while ($row = mysqli_fetch_assoc($select_posts)) {
     echo "<td>{$post_tags}</td>";
     echo "<td>{$post_comment_count}</td>";
     echo "<td>{$post_date}</td>";
-    echo "<td><a href='?delete=$post_id'>Delete</td>";
+    echo "<td><a href='?source=edit_post&p_id={$post_id}'>Edit</td>";
+    echo "<td><a href='?delete={$post_id}'>Delete</td>";
     echo "</tr>";
 }
 if(isset($_GET['delete'])){

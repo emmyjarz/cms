@@ -27,10 +27,10 @@ header("Location: posts.php");
 ?>
 <form action="" method="post" enctype="multipart/form-data">
 <div class="form-group">
-<div class="form-group">
     <label for="">Title</label>
     <input type="text" class="form-control" name="post_title">
 </div>
+<div class="form-group">
     <label for="">Author</label>
     <input type="text" class="form-control" name="post_author">
 </div>

@@ -15,8 +15,8 @@ $post_comment_count = 4;
 
 //move picture from temp location to location that we want.
 move_uploaded_file($post_image_temp, "../images/$post_image");
-$query = "INSERT INTO posts(post_title, post_author, post_category_id, post_status, post_tags, post_content, post_date, post_comment_count) ";
-$query .= "VALUES ('{$post_title}', '{$post_author}', {$post_category_id}, '{$post_status}', '{$post_tags}', '{$post_content}', now(), '{$post_comment_count}') ";
+$query = "INSERT INTO posts(post_title, post_author, post_category_id, post_status, post_image, post_tags, post_content, post_date, post_comment_count) ";
+$query .= "VALUES ('{$post_title}', '{$post_author}', {$post_category_id}, '{$post_status}','{$post_image}' '{$post_tags}', '{$post_content}', now(), '{$post_comment_count}') ";
 $create_post_query = mysqli_query($connection, $query);
 confirm($create_post_query);
 header("Location: posts.php");

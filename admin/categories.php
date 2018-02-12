@@ -45,6 +45,8 @@ if (isset($_GET['edit'])) {
                                 <tr>
                                     <th class="text-center">Id</th>
                                     <th class="text-center">Catagory Title</th>
+                                    <th class="text-center">Edit</th>
+                                    <th class="text-center">Delete</th>
                                 </tr>
                             </thead>
                             <tbody>
